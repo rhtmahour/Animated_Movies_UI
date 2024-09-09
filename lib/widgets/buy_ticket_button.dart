@@ -1,3 +1,4 @@
+import 'package:animated_movies_ui/services/stripe_service.dart';
 import 'package:flutter/material.dart';
 
 class BuyTicketButton extends StatelessWidget {
@@ -8,7 +9,9 @@ class BuyTicketButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        StripeService.instance.makePayment();
+      },
       elevation: 0,
       color: const Color.fromARGB(255, 118, 118, 118),
       textColor: Colors.white,
